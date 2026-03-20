@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;SafetyCulture Event Attendance Report&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-purple: #6559FF;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-purple-light: #8B82FF;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-purple-xlight: #EEEEFF;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-navy: #293745;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-green: #00875A;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-green-light: #E3FCEF;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-red: #DE350B;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-red-light: #FFEBE6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-orange: #FF8B00;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-orange-light: #FFF4E5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-grey: #F4F5F7;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-border: #DFE1E6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-text: #172B4D;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--sc-subtext: #5E6C84;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; background: #F4F5F7; color: var(--sc-text); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.header { background: var(--sc-navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 36px; flex-wrap: wrap; gap: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.logo-svg { width: 160px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.share-btn { background: var(--sc-purple); color: white; border: none; border-radius: 6px; padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.2s; font-family: inherit; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.share-btn:hover { background: var(--sc-purple-light); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.header-band { background: var(--sc-purple); height: 4px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.container { max-width: 1200px; margin: 0 auto; padding: 28px 20px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card { background: white; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); border-left: 4px solid var(--sc-purple); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.green { border-left-color: var(--sc-green); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.red { border-left-color: var(--sc-red); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.orange { border-left-color: var(--sc-orange); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.navy { border-left-color: var(--sc-navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-num { font-size: 36px; font-weight: 800; color: var(--sc-purple); line-height: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.green .card-num { color: var(--sc-green); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.red .card-num { color: var(--sc-red); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.orange .card-num { color: var(--sc-orange); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card.navy .card-num { color: var(--sc-navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-label { font-size: 12px; color: var(--sc-subtext); margin-top: 6px; font-weight: 500; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section-title { font-size: 16px; font-weight: 700; color: var(--sc-navy); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section-title::after { content: ''; flex: 1; height: 2px; background: var(--sc-border); border-radius: 2px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.chart-wrap { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 22px 24px; margin-bottom: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.legend { display: flex; gap: 18px; margin-bottom: 18px; flex-wrap: wrap; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.leg { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--sc-subtext); font-weight: 500; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.leg-dot { width: 12px; height: 12px; border-radius: 3px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-label { width: 110px; font-size: 11.5px; color: var(--sc-text); text-align: right; flex-shrink: 0; font-weight: 500; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-track { flex: 1; background: #EEF0F4; border-radius: 6px; height: 24px; overflow: hidden; display: flex; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-yes { background: var(--sc-purple); height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-no { background: #FC8181; height: 100%; display: flex; align-items: center; justify-content: flex-start; padding-left: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-nonr { background: var(--sc-orange); height: 100%; display: flex; align-items: center; justify-content: flex-start; padding-left: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-val { font-size: 10.5px; font-weight: 700; color: white; white-space: nowrap; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar-total { width: 52px; font-size: 11px; color: var(--sc-subtext); flex-shrink: 0; font-weight: 500; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.table-wrap { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>table { width: 100%; border-collapse: collapse; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>thead tr { background: var(--sc-navy); color: white; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>thead th { padding: 11px 14px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.3px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>tbody tr { border-bottom: 1px solid var(--sc-border); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>tbody tr:last-child { border-bottom: none; font-weight: 700; background: var(--sc-grey); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>tbody td { padding: 9px 14px; font-size: 12.5px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill-yes { background: var(--sc-green-light); color: var(--sc-green); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill-no { background: var(--sc-red-light); color: var(--sc-red); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill-nonr { background: var(--sc-orange-light); color: var(--sc-orange); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.office-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; margin-bottom: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.office-card { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.office-hdr { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--sc-navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.office-hdr.remote { background: var(--sc-purple); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.office-hdr-name { font-weight: 700; font-size: 13.5px; color: white; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.office-badge { background: rgba(255,255,255,0.18); color: white; border-radius: 20px; padding: 3px 10px; font-size: 11.5px; font-weight: 700; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.office-body { padding: 12px 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sub-hdr { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-bottom: 6px; margin-top: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sub-hdr.yes { background: var(--sc-green-light); color: var(--sc-green); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sub-hdr.no { background: var(--sc-red-light); color: var(--sc-red); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sub-hdr.nonr { background: var(--sc-orange-light); color: var(--sc-orange); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.name-list { list-style: none; margin-bottom: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.name-list li { font-size: 11.5px; padding: 3px 0; border-bottom: 1px solid #F4F5F7; color: #344563; display: flex; align-items: center; gap: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.name-list li:last-child { border-bottom: none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dot.yes { background: var(--sc-green); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dot.no { background: var(--sc-red); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dot.nonr { background: var(--sc-orange); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.none-msg { font-size: 11.5px; color: #A5ADBA; font-style: italic; padding: 2px 0 6px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* EXPORT PANEL */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-wrap { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 24px; margin-bottom: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>@media(max-width:600px){ .export-grid { grid-template-columns: 1fr; } }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-label { font-size: 12px; font-weight: 700; color: var(--sc-navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.filter-group { display: flex; flex-direction: column; gap: 7px; max-height: 220px; overflow-y: auto; padding-right: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.filter-group::-webkit-scrollbar { width: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.filter-group::-webkit-scrollbar-thumb { background: var(--sc-border); border-radius: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.filter-item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--sc-text); cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.filter-item input[type=checkbox] { accent-color: var(--sc-purple); width: 14px; height: 14px; cursor: pointer; flex-shrink: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-btn { background: var(--sc-purple); color: white; border: none; border-radius: 6px; padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 7px; transition: background 0.2s; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-btn:hover { background: var(--sc-purple-light); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-btn.secondary { background: var(--sc-navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-btn.secondary:hover { background: var(--sc-navy-light); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-preview { margin-top: 16px; background: var(--sc-grey); border-radius: 8px; padding: 12px 16px; font-size: 12px; color: var(--sc-subtext); min-height: 36px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.export-count { font-weight: 700; color: var(--sc-purple); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.footer { text-align: center; font-size: 11px; color: #A5ADBA; padding: 16px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>@media print {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.share-btn { display: none !important; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body { background: white; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.office-grid { grid-template-columns: repeat(2, 1fr); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="header-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;svg class="logo-svg" viewBox="0 0 220 44" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;rect width="40" height="40" rx="8" fill="#6559FF" y="2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;path d="M20 10 L28 14 L28 22 Q28 30 20 34 Q12 30 12 22 L12 14 Z" fill="white" opacity="0.9"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;path d="M17 21 L19.5 23.5 L24 18" stroke="#6559FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;text x="50" y="18" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="13" fill="white"&gt;SafetyCulture&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;text x="50" y="34" font-family="Inter, Arial, sans-serif" font-weight="400" font-size="10" fill="rgba(255,255,255,0.6)"&gt;Event Attendance Report&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="share-btn" onclick="window.print()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;polyline points="6 9 6 2 18 2 18 9"/&gt;&lt;path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/&gt;&lt;rect x="6" y="14" width="12" height="8"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Print / Save as PDF</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="header-band"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cards" id="summaryCards"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;📊 Summary by Office&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="table-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Office&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;✅ Attending (YES)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;❌ Not Attending (NO)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;❓ No Response&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Total&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tbody id="summaryTable"&gt;&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="chart-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;📈 Response Breakdown by Office&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="legend"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="leg"&gt;&lt;div class="leg-dot" style="background:var(--sc-purple)"&gt;&lt;/div&gt; Attending (YES)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="leg"&gt;&lt;div class="leg-dot" style="background:#FC8181"&gt;&lt;/div&gt; Not Attending (NO)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="leg"&gt;&lt;div class="leg-dot" style="background:var(--sc-orange)"&gt;&lt;/div&gt; No Response&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="chart"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- EXPORT PANEL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;📥 Export Data&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="export-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="export-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="export-label"&gt;Filter by Office&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="filter-group" id="officeFilters"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="export-label"&gt;Filter by Response Status&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="filter-group" id="statusFilters"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="filter-item"&gt;&lt;input type="checkbox" value="yes" checked onchange="updatePreview()"&gt; ✅ Attending (YES)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="filter-item"&gt;&lt;input type="checkbox" value="no" checked onchange="updatePreview()"&gt; ❌ Not Attending (NO)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="filter-item"&gt;&lt;input type="checkbox" value="nonr" checked onchange="updatePreview()"&gt; ❓ No Response&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="export-preview" id="exportPreview"&gt;Select filters above to preview your export.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="export-actions" style="margin-top:16px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="export-btn" onclick="exportCSV()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/&gt;&lt;polyline points="7 10 12 15 17 10"/&gt;&lt;line x1="12" y1="15" x2="12" y2="3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Download CSV</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="export-btn secondary" onclick="selectAllOffices()"&gt;Select All Offices&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="export-btn secondary" onclick="clearAllOffices()"&gt;Clear All&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;🏢 Office-by-Office Breakdown&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="office-grid" id="officeGrid"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="footer"&gt;SafetyCulture · Event Attendance Report · Confidential · All data sourced from submitted RSVP sheet&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const data = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Kansas City", remote: false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Alexander Hansen","Alexander Jeffrey Riesberg","Alicia Catherine Nilsen","Allison Baxter","Andrew Douglas Winter","Andrew Lee","Anthony David Villanueva","Austin Anderson","Blake Lilly","Brady Kaplan","Brett Bond","Brooke Elizabeth McCourt","Caringtyn Julian","Carmen Marie Vajgrt","Christina Gibson","Dakota Geels","Daniel Erickson","Elodia Consuelo Terrazas","Emma Handy","Isabelle K Calvert","Jacob Robert Oldenhuis","Jasmyn Loya","Jay Lysinger","Jessica Smith","Katherine Tucker","Kathryn Astrid Horner","Mariah Curnyn","Melissa Hildreth","Miguel Angel Venegas","Naman Wajid","Nathaniel Latz","Paige Rohlfing","Ricky Gonzalez","Robert Lewis McKenzie","Sam Thoenen","Sarah Meier","Shannon Leigh Myers","Spenser Kathleen Murray","Stacey Snooks","Tatyana Clayton","Taylor Kinsey","Timothy Michael Helton","Tyler Bottles","Whitney Nicole Bright","Will Ben Sims","William Randolph Johnson Lovelace"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: ["Emily Wurtz","Lindsay Anne Lewin","Lluis Altimires Ros","Alexa Ann Lapke","Chelsea Marie Paul","Payton Reid"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Chelsea Marie Evilsizer","Gordon Louis Reiz","Kevin Foote","Mollie Crockwell","Travis John McReynolds"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Sydney", remote: false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Alex Milliner","Andrew Hagan","Anthony Paul Keogh","Belynda Lam","Blake Wyer","Brian William Naylor","Carly Grace Crawford","Daisuke Nakayama","Edward Macky","EmmaLouise Angelica Janze","Hayden Nicholas Robert Elvy","Isabelle Scaife","Jack Yuming Han","Jacob Leung","Jason Asma","Jeannette Christine Laidlaw","Joao Luis Fernandes Cruz","Joshua Desmond Louis Weinstein","Keerthana Sachi Rajalingam","Laura Hyde Page","Liam Bow","Lincoln Gock-Young","Luke Anthony Tickle-Corkin","Luke Gilroy","Martin Daniel Murphy","Melissa Mitchell","Michael Matthew Morelock","Mya Walters","Nicholas Brandoff Root","Nick Brown","Nicola Marianne Gulbis","Orion Fairbanks","Philip Goldie","Rianna Bernal","Rosie May Courtier","Samuel Brunton","Serina Liu","Tessa Laetitia Jonker","Thomas Nickoll","Tria Ysabel Langurayan Bondoc","Yiyi Cheng"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: [],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Abbie Carniegie","Anneliese Lambert","Annemarie Emma Jamieson","Christopher James Tindale","Cicely Suzanne Finamore","Clarice Helen Maples","Danielle Weston","Dylan Caton","Emily Hannah Coetzee","Hannah Joy Zeb","Henry Richard Douglas Otton","Jacqueline Nguyen","Jason Kim","Jessy Adele Kennedy","Jo Pittaway","Josh Prissman","Kamran Muhammad","Keiran Woods","Lauren Gregory","Liam Barry","Luke Bradford Teys","Luke William Windred","Madi Jaikumar","Matthew McManus","Michael Juranek","Nethya Audrey Smith","Olivia Anotinette Granneman","Peter James Brown","Phoebe Cater","Raphael Salpeter","Riley John Allen","Rohhan Zebib","Roisin McErlain","Ryan Meredith","Thomas Baudin","Thomas Schoeb","Zachary Collie"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Manila", remote: false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Alfonso Ricardo Holganza Orbin","Alyssa Casey Guintu Ilaga","Alyssa Nicole Chua Bun Pho Niverba","Ana Carmela Mabaquiao Santiago","Arthee Villegas Cueno","Elizabeth Megido","Gianna Diaz","Ibrahim Duremdes Diro","Jelly Matchubar","John Garlan","John Westly Zapanta Reyes","Junnuel Terence Alejo Abejuela","Kana Mayumi Umali","Luigi Mariano","Luis Miguel Santos Enriquez","Margaux Yacel Buñales","Maria Kaitlin Blythe Leido Dalipe","Mariegold Aviso Palomares","Mariela Krystal Santos Flores","Marina Patricia Solidad Taniguchi","Maya Reyes","Rowena Julianne San Pedro Arellano","Ruzelle Johanna Zaldivar Lopez","Veronica Aquino Abergos","Victoria Bianca Larracas Beltran"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: [],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Mark Joseph Badilles Parut"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Austin", remote: false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Brandon Abeling","Cecilia Colo","David Trevino","Ekta Saini","Jason Kozel","Jean Mangum","Jean-Paul Smith","Jeffrey Wagner","John James Wohn","Lance Douglas Lee","Maud Sztern","Michael Lawrence DuPlessis","Mike Smith","Natalie Hughlett","Oliver Jesus Aponte Bracamontes","Patrick Gordon Le Feuvre","Pollard (Cinco) Hickman Coates","Scott Loewen"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: ["Matt Achenbaum"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Alex Marcinek II"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Manchester", remote: false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Chiedza Catherine Mazarire","Davinia Thomas","Dawid Jaworski","Evangeline Carolan","Greg Alan Davies","Hanaa Ashraf","Imani Kristine Brocklehurst","Jacob Cooper-Woolley","Laura Ann Brown","Lewis Michael Craig Deane","Mike Hatton","Mollie Anne Irving","Odette Colebrook","Olivia Langley","Olivia Prior (Douglas)","Rebecca Gina Critchley","William Whyler","Zohaib Rehman"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: ["Samantha Beth Francis"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Adwoa Ofei","Alexander Julian George Brooks-Sykes","Alice Kirkup","Andrew Callum McGrouther","Audrey Halpin","Ben Edwards","Georgina Holloway","Jennifer Lynne Antrobus","Jonathan Soakell","Joseph William Pateman","Karolina Wiktoria Bolanowska","Lucy Sharpe","Ralph Christopher Pillmoor","Rebeca Sian Lumb","Vanessa D'Souza","Will Parker","William Worsley"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Remote: UK", remote: true,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Anis El-aidouni","Anna Katherine Hatfield-Shaw","Dru Modasia","Emiliano Muco","Jessica Caird","Pascale Emanuelle Radford","Paul Simmons","Ronan Kirby","Ross Davis","Shauna Leung","Susanne Kraeuter"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: ["Danielle Lucy Moss","Filippo Pavone"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Edwin Davidian","Jean-François Pierre Ghislain Pypops","Mohammed Goess","Thomas Corfield"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Remote: US", remote: true,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Andrea Nicolle Carmona Candelaria","Corrado Dino Sammarco","Craig Allen Crawford","Denison Risso","Katelyn Fagan Ropp","Robert Outsen","Ryan Canfield","Thomas Murdock"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: ["Riley Sloan"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Samuel Alexander Byrnes","Steffi James"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Amsterdam", remote: false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Adeline Schäfer","Benjamin Passey","Charline Elisabeth M. Jonckheere","Hannah Lucy Yorke","Michele Rosmarie Riedl"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: ["Adèle Ranc","Léo Maxime Guido Furlan","Enzo David Antoine Peluso"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Kira Celine Löffler","Shaber Hossain","Youcef Hammoudi"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Remote: AU", remote: true,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: [],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: [],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: ["Chelsea Sunderland","Kyle Shelford","Luke Rowan"]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>office: "Melbourne", remote: false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>yes: ["Harsh Shah"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>no: [],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nonr: []</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">// Summary cards</p>
+<p class="p1">const totalYes = data.reduce((s,d) =&gt; s + d.yes.length, 0);</p>
+<p class="p1">const totalNo = data.reduce((s,d) =&gt; s + d.no.length, 0);</p>
+<p class="p1">const totalNonr = data.reduce((s,d) =&gt; s + d.nonr.length, 0);</p>
+<p class="p1">const totalAll = totalYes + totalNo + totalNonr;</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById('summaryCards').innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card green"&gt;&lt;div class="card-num"&gt;${totalYes}&lt;/div&gt;&lt;div class="card-label"&gt;✅ Confirmed Attending&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card red"&gt;&lt;div class="card-num"&gt;${totalNo}&lt;/div&gt;&lt;div class="card-label"&gt;❌ Not Attending&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card orange"&gt;&lt;div class="card-num"&gt;${totalNonr}&lt;/div&gt;&lt;div class="card-label"&gt;❓ No Response&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card navy"&gt;&lt;div class="card-num"&gt;${totalAll}&lt;/div&gt;&lt;div class="card-label"&gt;👥 Total Included&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;&lt;div class="card-num"&gt;${data.length}&lt;/div&gt;&lt;div class="card-label"&gt;🏢 Offices / Regions&lt;/div&gt;&lt;/div&gt;`;</p>
+<p class="p2"><br></p>
+<p class="p1">// Summary table</p>
+<p class="p1">const tbody = document.getElementById('summaryTable');</p>
+<p class="p1">data.forEach(d =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const total = d.yes.length + d.no.length + d.nonr.length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (total === 0) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const row = document.createElement('tr');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>row.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;td&gt;&lt;strong&gt;${d.remote ? '🌐' : '🏙️'} ${d.office}&lt;/strong&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;td&gt;&lt;span class="pill pill-yes"&gt;${d.yes.length}&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;td&gt;&lt;span class="pill pill-no"&gt;${d.no.length}&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;td&gt;&lt;span class="pill pill-nonr"&gt;${d.nonr.length}&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;td&gt;&lt;strong&gt;${total}&lt;/strong&gt;&lt;/td&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>tbody.appendChild(row);</p>
+<p class="p1">});</p>
+<p class="p1">const totRow = document.createElement('tr');</p>
+<p class="p1">totRow.innerHTML = `&lt;td&gt;Total&lt;/td&gt;&lt;td&gt;&lt;span class="pill pill-yes"&gt;${totalYes}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="pill pill-no"&gt;${totalNo}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="pill pill-nonr"&gt;${totalNonr}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;strong&gt;${totalAll}&lt;/strong&gt;&lt;/td&gt;`;</p>
+<p class="p1">tbody.appendChild(totRow);</p>
+<p class="p2"><br></p>
+<p class="p1">// Chart</p>
+<p class="p1">const maxTotal = Math.max(...data.map(d =&gt; d.yes.length + d.no.length + d.nonr.length));</p>
+<p class="p1">const chart = document.getElementById('chart');</p>
+<p class="p1">data.forEach(d =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const total = d.yes.length + d.no.length + d.nonr.length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (total === 0) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const yW = (d.yes.length / maxTotal * 100).toFixed(1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const nW = (d.no.length / maxTotal * 100).toFixed(1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const rW = (d.nonr.length / maxTotal * 100).toFixed(1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>chart.innerHTML += `</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bar-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bar-label"&gt;${d.office}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bar-track"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bar-yes" style="width:${yW}%"&gt;&lt;span class="bar-val"&gt;${d.yes.length &gt; 0 ? d.yes.length : ''}&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bar-no" style="width:${nW}%"&gt;&lt;span class="bar-val"&gt;${d.no.length &gt; 0 ? d.no.length : ''}&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bar-nonr" style="width:${rW}%"&gt;&lt;span class="bar-val"&gt;${d.nonr.length &gt; 0 ? d.nonr.length : ''}&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bar-total"&gt;${total} total&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">// Office cards</p>
+<p class="p1">const grid = document.getElementById('officeGrid');</p>
+<p class="p1">data.forEach(d =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const total = d.yes.length + d.no.length + d.nonr.length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (total === 0) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const mkList = (arr, cls) =&gt; arr.length &gt; 0</p>
+<p class="p1"><span class="Apple-converted-space">    </span>? `&lt;ul class="name-list"&gt;${arr.map((n,i) =&gt; `&lt;li&gt;&lt;span class="dot ${cls}"&gt;&lt;/span&gt;${i+1}. ${n}&lt;/li&gt;`).join('')}&lt;/ul&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">    </span>: `&lt;div class="none-msg"&gt;None&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid.innerHTML += `</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="office-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="office-hdr ${d.remote ? 'remote' : ''}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="office-hdr-name"&gt;${d.remote ? '🌐' : '🏙️'} ${d.office}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="office-badge"&gt;${d.yes.length} attending&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="office-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sub-hdr yes"&gt;✅ Attending — ${d.yes.length}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>${mkList(d.yes, 'yes')}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sub-hdr no"&gt;❌ Not Attending — ${d.no.length}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>${mkList(d.no, 'no')}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sub-hdr nonr"&gt;❓ No Response — ${d.nonr.length}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>${mkList(d.nonr, 'nonr')}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
